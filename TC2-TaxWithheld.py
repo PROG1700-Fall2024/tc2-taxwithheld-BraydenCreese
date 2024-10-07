@@ -10,6 +10,13 @@
 # Provincial withholding tax is calculated at 6.0%. Federal withholding tax is calculated at 25.0%. 
 # The tax deduction for dependents is calculated at 2.0% of the employee’s salary per dependent.
 
+
+"""
+
+after looking over this again I didnt format the outout for the Dependent Deduction for the amount of people correctly. its printing as 2.0 and not 2.
+
+"""
+
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
 
