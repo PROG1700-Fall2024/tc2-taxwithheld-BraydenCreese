@@ -13,12 +13,49 @@
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
 
+    # setting values to 0 for clean numbers
+    weeklySalary_preTax     = 0 
+    dependentsAmount        = 0
+
+    # welcome / opening message
+    print("Tax Withholding Calculator")
+
+    # getting user input for their weekly salary and the amount of dependents they have. ( Logic for the loop is the same for both )
+    while True: # <--- setting up a loop to catch user input error
+        try: # <--- telling loop to try taking inputs till it is correct or a num
+            weeklySalary_preTax = float(input("\nPlease enter the full amount of your weekly salary: ")) # <--- input for users weekly salary
+            break # <--- stops the loop when it is sataifed and is givien a number
+        except ValueError: # <--- if a non number is found it triggers a error in the loop and prints the error message and loops back to the input.
+            print("Invlaid Input! Please enter a number value for 'full amount of your weekly salary'.")
+
+    while True:
+        try:
+            dependentsAmount = float(input("How many dependents do you have?: ")) # <--- input for users amount of dependents
+            break
+        except ValueError:
+            print("Invlaid Input! Please enter a number value for 'How many dependents do you have'.")
 
 
+    # calcs
+    provincialTax = weeklySalary_preTax * 0.06
+    federalTax = weeklySalary_preTax * 0.25
+    dependentDeduction = weeklySalary_preTax * 0.02 * dependentsAmount
 
+    # total tax after deductions
+    totalTax = provincialTax + federalTax - dependentDeduction
 
+    totalWithheld = provincialTax + federalTax - dependentDeduction
 
+    # total take home pay
+    takeHomePay = weeklySalary_preTax - totalTax
 
+    
+    # prining out end values for users inputed starting values
+    print(f"Provincial Tax Withheld:                                    $""{:.2f}".format(provincialTax))
+    print(f"Federal Tax Withheld:                                       $""{:.2f}".format(federalTax))
+    print(f"Dependent Deduction for {dependentsAmount} dependents:                     $""{:.2f}".format(dependentDeduction))
+    print(f"Total Withheld:                                             $""{:.2f}".format(totalWithheld))
+    print(f"Total Take-Home Pay:                                        $""{:.2f}".format(takeHomePay))
 
     # YOUR CODE ENDS HERE
 
