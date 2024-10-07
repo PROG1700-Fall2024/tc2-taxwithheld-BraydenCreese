@@ -37,7 +37,7 @@ def main():
 
     while True:
         try:
-            dependentsAmount = float(input("How many dependents do you have?: ")) # <--- input for users amount of dependents
+            dependentsAmount = int(input("How many dependents do you have?: ")) # <--- input for users amount of dependents
             break
         except ValueError:
             print("Invlaid Input! Please enter a number value for 'How many dependents do you have'.")
@@ -60,7 +60,7 @@ def main():
     # prining out end values for users inputed starting values
     print(f"Provincial Tax Withheld:                                    $""{:.2f}".format(provincialTax))
     print(f"Federal Tax Withheld:                                       $""{:.2f}".format(federalTax))
-    print(f"Dependent Deduction for {dependentsAmount} dependents:                     $""{:.2f}".format(dependentDeduction))
+    print(f"Dependent Deduction for {dependentsAmount} dependents:                       $""{:.2f}".format(dependentDeduction))
     print(f"Total Withheld:                                             $""{:.2f}".format(totalWithheld))
     print(f"Total Take-Home Pay:                                        $""{:.2f}".format(takeHomePay))
 
